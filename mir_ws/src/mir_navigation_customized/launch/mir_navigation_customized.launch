@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="simulation_stop" default="false" />
+    <arg name="map_file" default="$(find mir_gazebo)/maps/maze.yaml" doc="Path to a map .yaml file (required)." />
+    <arg name="local_planner" default="teb" doc="Local planner can be either dwa, base, teb or pose"/>
+    <arg name="prefix" default="" doc="Prefix used for robot tf frames" /> <!-- used in the config files -->
+    <arg name="namespace" default="$(arg prefix)" doc="Namespace to push all topics into."/>
+    
+    <include file="$(find mir_navigation)/launch/start_maps.launch">
+      <arg name="map_file" value="$(arg map_file)" />
+    </include>
+
+    <include file="$(find mir_navigation)/launch/move_base.xml">
+      <arg name="local_planner" value="$(arg local_planner)"/>
+      <arg name="prefix" value="$(arg prefix)" />
+    </include>
+    
+    <include file="$(find mir_gazebo)/launch/mir_maze_world.launch">
+      <arg name="gui" value="true"/>
+      <arg name="simulation_stop" value="$(arg simulation_stop)" />
+      <arg name="mir_type" value="mir_100" />
+      <arg name="tf_prefix" value="$(arg prefix)" />
+    </include>
+    
+    <!--include file="$(find mir_navigation)/launch/amcl.launch">
+      <arg name="initial_pose_x" value="10.0"/>
+      <arg name="initial_pose_y" value="10.0" />
+    </include-->
+    
+    <include file="$(find mir_gazebo)/launch/fake_localization.launch">
+      <arg name="delta_x" value="-10.0"/>
+      <arg name="delta_y" value="-10.0" />
+    </include>
+    
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find mir_navigation)/rviz/navigation.rviz"/>
+</launch>

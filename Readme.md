@@ -128,7 +128,7 @@ It will open the docker with the image_name. For closing, type `exit` and `enter
   
 - export XDG Runtime dir for dcoker
 
-    `export XDG_RUNTIME_DIR=/Home/mir_ws`
+    `export XDG_RUNTIME_DIR=/path/to/workspace/mir_ws`
   
 - launch the navigation file along with simulation file.
 

@@ -125,7 +125,11 @@ It will open the docker with the image_name. For closing, type `exit` and `enter
 - source the workspace directory.
 
     `source devel/setup.bash`
+  
+- export XDG Runtime dir for dcoker
 
+    `export XDG_RUNTIME_DIR=/Home/mir_ws`
+  
 - launch the navigation file along with simulation file.
 
     `roslaunch mir_navigation_customized mir_navigation_customized.launch`

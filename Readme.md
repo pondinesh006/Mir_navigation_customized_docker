@@ -58,7 +58,7 @@ Usage MIR robot with customized navigation package in docker
 
 #### _Docker pull image_
 
-> `docker pull osrf/ros:noetic-desktop-full`
+`docker pull osrf/ros:noetic-desktop-full`
 
 &nbsp; It will pull the ros noetic image from online.
 
@@ -66,7 +66,7 @@ Usage MIR robot with customized navigation package in docker
 
 - For first initialization,
 
-    > `docker run --name mir_robot -e DISPLAY=host.docker.internal:0.0 -v path/to/volume/mir_robot_docker:/Home -it osrf/ros:noetic-desktop-full`
+    `docker run --name mir_robot -e DISPLAY=host.docker.internal:0.0 -v path/to/volume/mir_robot_docker:/Home -it osrf/ros:noetic-desktop-full`
 
     `path/to/volume => location address where u downloaded the mir_robot_docker file`
 
@@ -74,9 +74,9 @@ It will start and run the docker with the given image and volume specified for i
 
 - After that, now start the docker with the image_name.
 
-    > `docker start mir_robot`
+    `docker start mir_robot`
 
-    > `docker exec -e DISPLAY=host.docker.internal:0.0 -it mir_robot bash`
+    `docker exec -e DISPLAY=host.docker.internal:0.0 -it mir_robot bash`
 
 It will open the docker with the image_name. For closing, type `exit` and `enter` on the terminal.
 
@@ -106,7 +106,7 @@ It will open the docker with the image_name. For closing, type `exit` and `enter
 
 - Now, stop the docker with the image_name.
 
-    > `docker stop mir_robot`
+    `docker stop mir_robot`
 
 ## **Navigation Running**
 

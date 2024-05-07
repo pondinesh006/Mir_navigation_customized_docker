@@ -82,7 +82,15 @@ It will open the docker with the image_name. For closing, type `exit` and `enter
 
 - change the directory to the workspace directory.
 
-    `cd Home/mir_ws`
+    `cd Home/mir_ws/src`
+
+- create `catkin_init_workspace` on source
+
+    `catkin_init_workspace`
+
+- change the directory to the workspace directory.
+
+    `cd ..`
 
 - Install the  `requirement.sh` file on the docker, using
 
@@ -103,6 +111,14 @@ It will open the docker with the image_name. For closing, type `exit` and `enter
     ros-noetic-fake-localization \
     ros-noetic-robot-localization
     ```
+
+- change the directory to the workspace directory.
+
+    `cd Home/mir_ws`
+
+- do the `catkin_make` at the workspace
+
+    `catkin_make`
 
 - Now, stop the docker with the image_name.
 

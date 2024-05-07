@@ -1,4 +1,5 @@
-# **Cutomized Navigation with Docker**
+# Mir_navigation_customized_docker
+Usage MIR robot with customized navigation package in docker 
 
 # Agenda
 
